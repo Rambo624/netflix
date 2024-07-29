@@ -1,12 +1,16 @@
 import React, { useRef, useState } from 'react'
 import Header from './Header'
-import { BG_URL } from '../Utils/url'
+import { BG_URL, USER_AVATAR } from '../Utils/url'
 import { Link} from 'react-router-dom'
 import { validateData } from '../Utils/validate'
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword,updateProfile } from "firebase/auth";
 import { auth } from '../Utils/firebase'
 import { useNavigate } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { addUser } from '../Utils/userSlice'
+
 function Login() {
+  const dispatch=useDispatch()
   const navigate=useNavigate()
     const [isSignIn,setisSignIn]= useState(true)
     const[errorMsg,setErrMsg]=useState(null)
@@ -37,6 +41,22 @@ try {
         password.current.value
       );
       const user = userCredential.user;
+      updateProfile(user, {
+        displayName: Name.current.value, photoURL: USER_AVATAR
+      }).then(() => {
+        const {uid,displayName,email,photoURL} = auth.currentUser;
+        dispatch(addUser({uid:uid,displayName:displayName,email:email,photoURL:photoURL})) 
+        
+        // Profile updated
+        // ...
+      }).catch((error) => {
+        // An error occurred
+        // ...
+        console.log(error)
+      });
+      setisSignIn(!isSignIn)
+     
+      
       console.log(user);
       // Handle successful sign-up
     } else {
@@ -46,7 +66,9 @@ try {
         .then((userCredential) => {
           // Signed in 
           const user = userCredential.user;
-          navigate("/browse")
+
+     
+       
           // ...
           console.log(user)
           
