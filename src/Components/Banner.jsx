@@ -6,9 +6,9 @@ function Banner() {
 
     const movies=useSelector(Store=>Store.movies?.nowPlayingMovies)
     if(movies===null) return
-    const randomIndex = Math.floor(Math.random() * movies.length);
+ 
   
-const mainMovie=movies[1]
+const mainMovie=movies[0]
 
 
   return (
