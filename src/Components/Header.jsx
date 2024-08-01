@@ -67,7 +67,7 @@ dispatch(changeLanguage(e.target.value))
       {user && <div className='flex'>
       {
         gptsearch &&  <select className='bg-white text-black w-28 h-8 mt-6 mr-2 rounded-lg'onChange={handleLanguageChange} name="" id="">
-      {SUPPORTED_LANG.map((language)=> <option value={language.identifier}>{language.name}</option>)}
+      {SUPPORTED_LANG.map((language)=> <option key={language.identifier} value={language.identifier}>{language.name}</option>)}
       </select>
       } 
         

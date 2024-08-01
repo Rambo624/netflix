@@ -13,7 +13,7 @@ function Cards() {
   return (
     <div>
 
-      <div>
+      <div className='bg-black'>
         <MovieList title={"Now Playing"} genre={movies.nowPlayingMovies} />
         <MovieList title={"Upcoming"} genre={movies.UpcomingMovies} />
         <MovieList title={"Popular"} genre={movies.popularMovies} />

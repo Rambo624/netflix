@@ -12,7 +12,12 @@ hindi:{
     spanish:{
  search:"Buscar",
  gptSearchPlaceholder:"¿Qué quieres ver?"
-    }
+    },
+    ml:{
+        search:"തിരയുക",
+        gptSearchPlaceholder:"നിനക്കെന്താ വേണ്ടത്?"
+           }
+       
 
 
 }

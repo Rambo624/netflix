@@ -7,10 +7,14 @@ export const options = {
     method: 'GET',
     headers: {
       accept: 'application/json',
-      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzYWExY2RiZTg2NGFjMzk0ZjJmZTQwYzE5YzRjNmU4YiIsIm5iZiI6MTcyMjI0MTg3Ny40MDMzOTcsInN1YiI6IjY2NzA1MTU1Yzg4MGNlYzk3NzBhMDYyNCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.R-mW_uqhG7pqSiSD9zAE9N74YZhQ16Wk3pyvC9fFGs8'
+      Authorization: `Bearer ${import.meta.env.VITE_TMDB_KEY}`
     }
   };
   
   export const POSTER_URL=`https://image.tmdb.org/t/p/w500`
 
-  export const SUPPORTED_LANG= [{identifier:"en",name:"English"},{identifier:"hindi",name:"Hindi"},{identifier:"spanish",name:"Spanish"}]
+  export const SUPPORTED_LANG= [{identifier:"en",name:"English"},{identifier:"hindi",name:"Hindi"},{identifier:"spanish",name:"Spanish"},{identifier:"ml",name:"Malayalam"}]
+
+  
+
+  export const GPT_KEY = import.meta.env.VITE_GPT_KEY;

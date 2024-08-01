@@ -9,9 +9,9 @@ function MovieList({ title, genre }) {
   }
 
   return (
-    <div className='bg-black'>
-      <h1 className='text-white'>{title}</h1>
-      <div className='flex overflow-x-scroll hide-scrollbar bg-black ' >
+    <div >
+      <h1 className='text-white bg-black bg-opacity-40  '>{title}</h1>
+      <div className='flex overflow-x-scroll hide-scrollbar bg-opacity-40 bg-black  ' >
         {genre.length > 0 ? (
           genre.map((movie) => (
             <MovieCard key={movie.id} poster={movie.poster_path} />
