@@ -38,7 +38,7 @@ async function SearchTMDB(movie){
 
   return (
     <div className='pt-36 flex justify-center '>
-        <form className='bg-black p-2 w-1/2 grid grid-cols-12 rounded-lg mb-5' onSubmit={(e)=>e.preventDefault()}>
+        <form className='bg-black p-2 mt-14 md:mt-0 mx-4 md:mx-0  md:w-1/2 grid grid-cols-12 rounded-lg mb-5' onSubmit={(e)=>e.preventDefault()}>
             <input ref={searchText} className='border ml-5 p-2 col-span-10 rounded-lg' type="text" placeholder={lang[language].gptSearchPlaceholder} />
             <button onClick={handleSearchButton} className='bg-red-600 p-2 rounded-lg col-span-2 ml-2'>{lang[language].search}</button>
         </form>

@@ -62,9 +62,9 @@ dispatch(changeLanguage(e.target.value))
 
   return (
 
-    <div className='absolute w-[100%] bg-gradient-to-b from-black z-20 flex justify-between '>
-      <img className='w-32 py-2 m-5' src={LOGO_URL} alt="" />
-      {user && <div className='flex'>
+    <div className='md:absolute w-screen bg-black md:bg-transparent  md:bg-gradient-to-b md:from-black z-20 md:flex justify-between '>
+      <img className='w-32 py-2 md:m-5 mx-auto ' src={LOGO_URL} alt="" />
+      {user && <div className='flex justify-center md:justify-between '>
       {
         gptsearch &&  <select className='bg-white text-black w-28 h-8 mt-6 mr-2 rounded-lg'onChange={handleLanguageChange} name="" id="">
       {SUPPORTED_LANG.map((language)=> <option key={language.identifier} value={language.identifier}>{language.name}</option>)}
@@ -73,7 +73,7 @@ dispatch(changeLanguage(e.target.value))
         
    {gptsearch? <button onClick={handleGptSearch} className='bg-purple-700 text-white w-28 h-8 mt-6 mr-2 rounded-lg '>Home</button>: <button onClick={handleGptSearch} className='bg-purple-700 text-white w-28 h-8 mt-6 mr-2 rounded-lg '>Gpt Search</button>}
        
-        <img className='w-8 h-8 mr-5 mt-6' src={user.photoURL} alt="" />
+        <img className=' hidden md:block w-8 h-8 mr-5 mt-6' src={user.photoURL} alt="" />
         <button onClick={handleSignout} className='bg-black h-6 mt-6 cursor-pointer p-2 text-white mr-10 '>{user.displayName}</button>
 
       </div>}

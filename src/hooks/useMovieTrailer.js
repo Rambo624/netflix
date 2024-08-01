@@ -1,10 +1,12 @@
 import { useState,useEffect } from "react"
 import { options } from "../Utils/url"
+import { useSelector } from "react-redux"
 
 
 
 
 const useMovieTrailer=(id)=>{
+ 
     const [movieTrailer, setMovieTrailer] = useState(null)
     async function trailerFetch() {
         const data = await fetch(`https://api.themoviedb.org/3/movie/${id}/videos?language=en-US`, options)
@@ -21,7 +23,7 @@ const useMovieTrailer=(id)=>{
 
 
     useEffect(() => {
-        trailerFetch()
+        if(!movieTrailer) trailerFetch()
     }, [])
 return movieTrailer
 }

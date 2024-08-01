@@ -93,9 +93,9 @@ try {
     <div>
         <Header/>
         <div   >
-            <img className='absolute'  src={BG_URL} alt="" />
+            <img className='absolute md:h-auto h-screen object-cover'  src={BG_URL} alt="" />
             <div >
-            <form onSubmit={(e)=>{e.preventDefault()}} className='bg-black bg-opacity-80  p-5 w-3/12 mx-auto left-0 right-0 absolute mt-56' >
+            <form onSubmit={(e)=>{e.preventDefault()}} className='bg-black bg-opacity-80 w-full  p-5 md:w-3/12  md:mx-auto left-0 right-0 absolute mt-56' >
                 <h1 className='font-bold  text-white text-2xl'>{isSignIn?"Sign In":"Sign up"}</h1>
                 {!isSignIn && < input ref={Name}  className='my-4 w-[80%] ml-9 p-2 rounded-lg  bg-gray-600 bg-opacity-70 text-white '  type="text" placeholder='Enter Full Name' />}
               

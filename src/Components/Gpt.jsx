@@ -8,7 +8,7 @@ function Gpt() {
   return (
     <div >
       <div className='fixed -z-10'>
-      <img  src={BG_URL} alt="" />
+      <img className='h-screen object-cover md:h-auto'  src={BG_URL} alt="" />
       </div>
     
       <GptSearchBar/>
